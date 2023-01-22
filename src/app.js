@@ -49,7 +49,7 @@ const connectDB = async () => {
 
 
     try {
-        mongoose.connect(process.env.DB_CONNECTION)
+        mongoose.connect('mongodb+srv://zacky:fightalignitem%40%2F%3F%40%2F@mycluster1.rcrtpcx.mongodb.net/webzackyDB')
         console.log('mongo connected')
     } catch (err) {
         console.log('mongo disconnected!')
