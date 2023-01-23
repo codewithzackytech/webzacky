@@ -47,10 +47,17 @@ app.use('/api', contact)
 
 const connectDB = async () => {
 
-
+    const mongoAtlasUri =
+        "mongodb+srv://zacky:fightalignitem%40%2F%3F%40%2F@mycluster1.rcrtpcx.mongodb.net/webzackyDB?retryWrites=true&w=majority";
     try {
-        mongoose.connect(process.env.DB_CONNECTION)
-        console.log('mongo connected')
+        // Connect to the MongoDB cluster
+        mongoose.connect(
+            mongoAtlasUri,
+            { useNewUrlParser: true, useUnifiedTopology: true },
+            () => console.log(" Mongoose is connected")
+        );
+
+        // console.log('mongo connected')
     } catch (err) {
         console.log('mongo disconnected!')
     }
