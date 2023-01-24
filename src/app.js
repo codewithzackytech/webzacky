@@ -38,6 +38,9 @@ app.use("/ExtendsUserinDjangoRestFramworkLoginTokenAuth", express.static(path.jo
 app.use("/ImplementationwithJWTusingNode", express.static(path.join(__dirname + "/public")))
 app.use("/ImplementationwithPushNotificationUsingReactNative", express.static(path.join(__dirname + "/public")))
 app.use("/HashingPasswordsinNodeandExpressusingbcrypt", express.static(path.join(__dirname + "/public")))
+app.use("/ImplementingCRUDAPiusingNodejs/ExpressandMongodb", express.static(path.join(__dirname + "/public")))
+app.use("/ImplementationwithJWTusingNode/Expressjs", express.static(path.join(__dirname + "/public")))
+
 app.use("/tutorials", express.static(path.join(__dirname + "/public")))
 
 
@@ -54,12 +57,12 @@ const connectDB = async () => {
         mongoose.connect(
             mongoAtlasUri,
             { useNewUrlParser: true, useUnifiedTopology: true },
-            () => console.log(" Mongoose is connected")
+            () => console.log("Atlas connected")
         );
 
         // console.log('mongo connected')
     } catch (err) {
-        console.log('mongo disconnected!')
+        console.log('Atlas disconnected!')
     }
 }
 
