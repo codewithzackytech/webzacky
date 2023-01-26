@@ -30,13 +30,13 @@ app.use("/BuildYourFirst2DGameusingGodotEngine", express.static(path.join(__dirn
 app.use("/Zalson3DGameBuiltwithGodotEngine", express.static(path.join(__dirname + "/public")))
 app.use("/PushNotificationImplementationwithElectronandReactjs", express.static(path.join(__dirname + "/public")))
 app.use("/ImplementingCRUDAPiusingNodejs", express.static(path.join(__dirname + "/public")))
-app.use("/ImplementingfontSizeAppinReactNativeRedux", express.static(path.join(__dirname + "/public")))
-app.use("/ImplementingCustomFontsAppinReactNative", express.static(path.join(__dirname + "/public")))
+app.use("/ImplementingfontSizeAppinReactNativeRedux/ReactRedux", express.static(path.join(__dirname + "/public")))
+app.use("/ImplementingCustomFontsAppinReactNative/Expo", express.static(path.join(__dirname + "/public")))
 app.use("/DjangoModelAuthPermission", express.static(path.join(__dirname + "/public")))
 app.use("/ElectronjsMultiPlatformArchitectureDeployment", express.static(path.join(__dirname + "/public")))
 app.use("/ExtendsUserinDjangoRestFramworkLoginTokenAuth", express.static(path.join(__dirname + "/public")))
 app.use("/ImplementationwithJWTusingNode", express.static(path.join(__dirname + "/public")))
-app.use("/ImplementationwithPushNotificationUsingReactNative", express.static(path.join(__dirname + "/public")))
+app.use("/ImplementationwithPushNotificationUsingReactNative/Expo", express.static(path.join(__dirname + "/public")))
 app.use("/HashingPasswordsinNodeandExpressusingbcrypt", express.static(path.join(__dirname + "/public")))
 app.use("/ImplementingCRUDAPiusingNodejs/ExpressandMongodb", express.static(path.join(__dirname + "/public")))
 app.use("/ImplementationwithJWTusingNode/Expressjs", express.static(path.join(__dirname + "/public")))
@@ -50,19 +50,18 @@ app.use('/api', contact)
 
 const connectDB = async () => {
 
-    const mongoAtlasUri =
-        "mongodb+srv://zacky:fightalignitem%40%2F%3F%40%2F@mycluster1.rcrtpcx.mongodb.net/webzackyDB?retryWrites=true&w=majority";
+    const mongoAtlasUri = 'mongodb+srv://zacky:fightalignitem%40%2F%3F%40%2F@mycluster1.rcrtpcx.mongodb.net/webzackyDB?retryWrites=true&w=majority';
     try {
         // Connect to the MongoDB cluster
         mongoose.connect(
             mongoAtlasUri,
             { useNewUrlParser: true, useUnifiedTopology: true },
-            () => console.log("Atlas connected")
+            () => console.log("MongoAtlas connected")
         );
 
         // console.log('mongo connected')
     } catch (err) {
-        console.log('Atlas disconnected!')
+        console.log('MongoAtlas disconnected!')
     }
 }
 
