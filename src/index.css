@@ -1,0 +1,397 @@
+/* body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.navSpace{
+  margin-left: 200px;
+}
+.titleicon{
+  margin-left: 10px;
+  font-size: x-large;
+  font-variant: small-caps;
+  color: rgb(4, 4, 37);
+  font-weight: 100;
+  font-family: cursive
+}
+.titleicon2{
+
+} */
+
+
+
+
+
+body {
+  margin: 0px;
+  padding: 0px;
+  
+
+}
+.welcomeimg{
+  background-image: url('../src//assets//images/home2.png');
+  background-image: cross-fade();
+
+}
+.theme{
+  padding-left: 50px;
+  padding-top: 30px;
+  cursor: pointer;
+}
+.navleftmargin{
+  margin-left: 50px;
+}
+.themelabel{
+  font-size: 15px;
+  cursor: pointer;
+}
+.contactHeader1{
+  color: blue;
+  font-weight: bolder;
+  
+}
+.contactHeader2{
+  color: rgb(41, 219, 41);
+   font-weight: bolder;
+  
+}
+.contactHeader3{
+  color: rgb(76, 64, 255);
+   font-weight: bolder;
+    cursor: pointer;
+  
+}
+.contactMail1{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: rgb(160, 156, 156);
+  /* background-color: white; */
+  /* padding: 5px; */
+  /* border-radius: 20px; */
+  /* margin-top: 10px; */
+
+}
+.contactMail2{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: rgb(160, 156, 156);
+  cursor: pointer;
+
+}
+.contactMail3{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: rgb(160, 156, 156);
+   cursor: pointer;
+
+}
+.contectBox1{
+  border-radius: 15px;
+  /* padding: 4px; */
+  /* box-shadow: 0px 30px 30px grey; */
+
+  border-width: 0px;
+  background-color: darkgray;
+}
+.email.Button{
+  border: solid 1px red;
+}
+.contectBox2{
+  border-radius: 15px;
+  /* padding: 4px; */
+  /* box-shadow: 0px 30px 30px grey; */
+  background-color: darkgray;
+}
+.contectBox3{
+  border-radius: 15px;
+  /* padding: 4px; */
+  /* box-shadow: 0px 30px 30px grey; */
+  background-color: darkgray;
+}
+
+.container-style {
+  /* background-color: #282c34; */
+  /* background-color: rgb(175, 176, 180); */
+    /* background-color: rgb(180, 180, 180); */
+       background-color: rgb(228, 228, 228);
+        /* background-color: rgb(155, 155, 155); */
+       /* background-image: url('./imgs/back.jpg'); */
+       /* background-repeat: repeat-x; */
+}
+.profileheaderfollowme{
+  padding-top: 30px;
+  /* margin-left: 300px; */
+}
+.whatsapp{
+  border: solid 0px white;
+  border-radius: 15px;
+  /* background-color: ; */
+  /* background-color: light */
+}
+.connectlabel{
+  /* margin-right: 200px; */
+  font-weight: bold;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(0, 0, 0);
+}
+.technicalSkillLabel{
+  color: gray;
+}
+.headerconnectwrap{
+  flex-wrap: wrap;
+}
+.sideprojectlabel{
+  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+}
+.line {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 100px;
+}
+.sideProject {
+  font-weight: bold;
+}
+.service1.card{
+  padding: 10px 100px 10px 100px;
+}
+.airnoteappimg1{
+  margin-right: 20px;
+  
+}
+.airnoteappimg2{
+  margin-left: 20px;
+}
+.githubleft{
+  margin-left: 20px;
+}
+
+.serviceportfolio.card{
+  padding: 10px 10px 10px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 0px grey;
+  flex-direction: row;
+}
+.reserved{
+  font-style: normal;
+  font-size: medium;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.reserved0{
+  font-style: normal;
+  font-size: small;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.bgdark{
+  background-color: red;
+}
+.githubimg {
+  /* border-radius: 20px; */
+}
+.opensourceproject{
+  cursor: pointer;
+}
+.item{
+  text-decoration: none;
+  font-weight: bold;
+  margin: 10px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  font-size: large;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: dodgerblue
+}
+
+.item2{
+  text-decoration: none;
+  font-weight: 100;
+  cursor: pointer;
+  font-size: small;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(255, 255, 255);
+}
+.card_1_skils.card{
+  background-color: rgb(142, 155, 184);
+  border: solid 0px rgb(142, 155, 184);
+  box-shadow: 0px 50px 30px grey;
+
+}
+.card_1_skils.card.hover{
+  background-color: rgb(0, 0, 0);
+  border: solid 20px rgb(0, 0, 0);
+  box-shadow: 0px 50px 30px grey;
+
+}
+.bottomContent{
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.leftcornerprofileimg{
+  flex-wrap: wrap;
+}
+.cardone{
+  padding: 5rem;
+}
+
+.experiencebox{
+box-shadow: 0px 20px 20px grey;
+}
+.experienceHeader {
+  font-weight: bold;
+  font-size: 20px;
+}
+.whatiover{
+  padding-bottom: 100px;
+  margin-top: 50px;
+  /* border-top-left-radius: 5000px; */
+  /* box-shadow: 0px 50px 50px grey; */
+    /* border-bottom-right-radius: 5000px; */
+}
+.EthioCashIMg.card{
+
+}
+.myskills{
+  margin-top: 50px;
+  /* border-top-right-radius: 1000px; */
+  /* border-bottom-right-radius: 1000px; */
+  /* border-top-left-radius: 1000px; */
+  /* border-bottom-left-radius: 1000px; */
+}
+.portfolio{
+  margin-top: 50px;
+   /* border-bottom-right-radius: 1000px; */
+}
+.media{
+  padding-top: 200px;
+}
+.myskillstopmargin{
+  /* margin-top: 150px; */
+  /* margin-bottom: 100px; */
+}
+.headerTitle{
+  font-weight: bold;
+}
+.homewrap{
+  flex-wrap: wrap;
+}
+.about-cards{
+  flex-wrap: wrap;
+}
+.skills-cards{
+  flex-wrap: wrap;
+ 
+}
+.getaboutme{
+  border-top-left-radius: 0px;
+}
+.header-one{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: white;
+  font-size: 14px;
+  margin-bottom: 0px;
+}
+.header-two{
+  padding-top: 0px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+  color: white;
+  font-size: 40px;
+}
+.letstalk{
+  margin-left: 10px;
+}
+.downloadcv {
+  margin-right: 10px;
+  color: dodgerblue;
+  border: solid 1px dodgerblue;
+}
+.experienced{
+  text-decoration: line-through;
+  
+}
+.listHeader{
+  font-weight: bold;
+}
+.listEx {
+  color: grey;
+}
+.header-three{
+  font-family: sans-serif;
+  color: rgb(66, 66, 66);
+  font-size: 14px;
+}
+.header-three2{
+  font-family: sans-serif;
+  color: rgb(66, 66, 66);
+  font-size: 16px;
+  font-weight: bold;
+}
+.allcardsprofolio.card>div{
+  border-radius: 50px;
+}
+.gettonowmetop{
+  margin-top: 100px;
+}
+.tonow{
+  padding-top: 0px;
+  font-family: sans-serif;
+  font-weight: 100;
+  color: rgb(137, 138, 145);
+  font-size: 13px;
+}
+
+.aboutme{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  color: rgb(71, 102, 206);
+  font-size: 25px;
+}
+.lastline{
+  color: gray;
+}
+.serviceCard.card{
+    background-color: rgb(142, 155, 184);
+    box-shadow: 0px 50px 30px grey;
+    border: solid 1px grey;
+}
+.profolliocards.card{
+      box-shadow: 0px 30px 30px grey;
+   background-color: rgb(167, 174, 187);
+   border:solid 0px grey
+}
+.content {
+  font-size: 20px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+.frontEndDev{
+    font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  color: rgb(8, 99, 190);
+  font-size: 15px;
+}
+.profile-img {
+  border-radius: 200px;
+  margin-left: 20px;
+}
+
+.profile-img2 {
+  border-radius: 500px;
+  margin-left: 20px;
+}
+
+.contactme{
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+
+}
