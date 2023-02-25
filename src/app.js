@@ -5,6 +5,9 @@ import contact from "./routers/api.js";
 import cors from 'cors'
 import path from "path";
 
+//products 
+let EnglishSomaliDictionaryCureentVersion = 0.1;
+
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
@@ -42,6 +45,16 @@ app.use("/ImplementingCRUDAPiusingNodejs/ExpressandMongodb", express.static(path
 app.use("/ImplementationwithJWTusingNode/Expressjs", express.static(path.join(__dirname + "/public")))
 
 app.use("/tutorials", express.static(path.join(__dirname + "/public")))
+app.use("/privacypolicy", express.static(path.join(__dirname + "/public")))
+
+app.use("/feedback", express.static(path.join(__dirname + "/public")))
+
+app.use("/EnglishSomaliDictionary", express.static(path.join(__dirname + "/public")))
+
+
+app.get('/api/EnglishSomaliDictionaryCureentVersion', (req, res) => {
+    res.send({ EnglishSomaliDictionaryCureentVersion })
+})
 
 
 
@@ -50,7 +63,7 @@ app.use('/api', contact)
 
 const connectDB = async () => {
 
-    const mongoAtlasUri = 'mongodb+srv://zacky:fightalignitem%40%2F%3F%40%2F@mycluster1.rcrtpcx.mongodb.net/webzackyDB?retryWrites=true&w=majority';
+    const mongoAtlasUri = process.env.DB_CONNECTION
     try {
         // Connect to the MongoDB cluster
         mongoose.connect(
