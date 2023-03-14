@@ -8,7 +8,7 @@ import {
 
 } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { FaWhatsapp, FaFacebook, FaLinkedin, FaGithub, FaCoffee, FaSun, FaMoon, FaBars, FaTimes as FaClose, FaClock, FaComment, FaEye, FaSign, FaGamepad, FaLeaf, FaUser } from 'react-icons/fa';
-import AuthorBiof from "../components/AuthorBiof";
+
 import code from "../code.";
 
 import icon from "../assets/images/navIcon.png";
@@ -16,6 +16,7 @@ import icon2 from "../assets/images/icon.png";
 import icon3 from "../assets/images/icon.png";
 import icon4 from "../assets/images/icon4.png";
 import devImg from "../assets/images/dev.jpg";
+import RNREDUX from "../assets/images/RNredux.jpg";
 
 import Login from "../Auth/Login";
 import Register from "../Auth/Register";
@@ -53,22 +54,24 @@ import {
   Label,
   Button,
   Input,
+  Form,
   Accordion,
   AccordionBody,
   AccordionHeader,
   AccordionItem,
-  Form,
   ModalHeader,
   ModalBody,
   Modal,
   ModalFooter,
   FormGroup,
 } from "reactstrap";
+import RNPUSH from "./rn_pushNot";
 import AuthorBio from "../components/AuthorBio";
 import NavBar from "../components/NavBar";
+import AuthorBiof from "../components/AuthorBiof";
 import Comments from "../components/comments";
 
-class DjangoAuthModel extends Component {
+class RNFontSize extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -85,14 +88,14 @@ class DjangoAuthModel extends Component {
       data: 'this is \n bag',
       number_of_comment: 0,
       views: 0
+
     };
   }
 
 
 
-
   getCommented_and_Visitors_Peples = () => {
-    axios.get(`/api/views/${8}`)
+    axios.get(`/api/views/${17}`)
       .then((response) => {
 
 
@@ -106,7 +109,7 @@ class DjangoAuthModel extends Component {
       .finally(() => console.log('request completed!'))
 
 
-    axios.get(`/api/comments/${8}`)
+    axios.get(`/api/comments/${17}`)
       .then((response) => {
 
         console.log(response.data.length)
@@ -120,6 +123,9 @@ class DjangoAuthModel extends Component {
       .finally(() => console.log('request completed!'))
   }
   componentDidMount = () => this.getCommented_and_Visitors_Peples()
+
+
+
 
   LoginInfoModalToggle = () => {
     this.setState({ LoginInfoModal: !this.state.LoginInfoModal });
@@ -197,11 +203,9 @@ class DjangoAuthModel extends Component {
       .finally(() => console.log("request completed!"));
   };
 
-
   handleTheme = () => {
     this.setState({ isDark: !this.state.isDark })
   }
-
 
 
   render() {
@@ -209,12 +213,10 @@ class DjangoAuthModel extends Component {
     const Darktheme = this.state.isDark
     return (
       <div>
-
         <NavBar
           handleTheme={this.handleTheme}
           Darktheme={Darktheme}
         />
-
 
         <div
           class={`offcanvas offcanvas-start ${this.state.isDark ? "text-white" : "text-dark"
@@ -242,6 +244,7 @@ class DjangoAuthModel extends Component {
                   <FaLeaf size={20} /> Web Zacky {" " + " "}
                 </Label>
               </a>
+
 
             </div>
             <a>
@@ -360,24 +363,24 @@ class DjangoAuthModel extends Component {
 
 
               <Label>____________</Label>
+              <a href='https://github.com/codewithzackytech'>
+                <Button
 
-              <Button
+                  className={`mr-2 btn ${Darktheme ? 'btn-outline-dark' : 'btn-dark'} px-5`}
 
-                className={`mr-2 btn ${Darktheme ? 'btn-outline-dark' : 'btn-dark'} px-5`}
-
-                onClick={() => null}
-                style={{
-                  borderWidth: 0,
-                  // backgroundColor: "green",
-                  // color: "white",
-                  // borderRadius: 10,
-                  fontFamily: 'revert',
-                  letterSpacing: 1
-                }}
-              >
-                Free Opensource Games <FaGamepad size={30} />
-              </Button>
-
+                  onClick={() => null}
+                  style={{
+                    borderWidth: 0,
+                    // backgroundColor: "green",
+                    // color: "white",
+                    // borderRadius: 10,
+                    fontFamily: 'revert',
+                    letterSpacing: 1
+                  }}
+                >
+                  Free Opensource Games <FaGamepad size={30} />
+                </Button>
+              </a>
 
 
 
@@ -472,11 +475,12 @@ class DjangoAuthModel extends Component {
               class="col-md-3 col-lg-3 d-md-block sidebar collapse mt-0"
               style={{ backgroundColor: Darktheme ? '#242526' : "#fffefe" }}
             >
+
+
               <AuthorBio
 
                 Darktheme={Darktheme}
               />
-
 
 
             </div>
@@ -493,13 +497,14 @@ class DjangoAuthModel extends Component {
                 <div className="">
                   <p
                     class="h3  m-4 "
-                    style={{ fontFamily: "sans-serif", color: Darktheme ? 'white' : 'black' }}
-                  >
-                    Django Model Authentication Permission
+                    style={{ fontFamily: "sans-serif", color: Darktheme ? 'white' : 'black' }}>
+                    Implementing fontSize App in ReactNative Redux/React-Redux
                   </p>
 
+
+
                   <p className="mx-4" style={{ color: Darktheme ? 'grey' : 'grey' }}>
-                    <FaClock className="mr-2" />  Jan 7, 2022 <FaEye className="mx-2" /> {this.state.views} views
+                    <FaClock className="mr-2" />  May 17, 2022 <FaEye className="mx-2" /> {this.state.views} views
                   </p>
 
 
@@ -511,38 +516,220 @@ class DjangoAuthModel extends Component {
 
 
 
-
                   <p
-                    className="mx-5 p"
+                    className="m-5 p"
                     style={{
                       color: Darktheme ? '#f0f0f0' : '#242526',
                       letterSpacing: 1,
                       fontFamily: "sans-serif",
                     }}>
-                    if you're developing Django BackEnd and every thing is working but you need permission some of your view functions, may be you wanna allow authenticated users to view/see some of your view functions if that is your problem this tutorial is for you, so let's begin.
+
+                    In this tutorial i will show you how to make fontSize management screen using redux/react-redux, so let's begin
+                  </p>
+
+
+
+
+
+                  <p class="h3  m-4 " style={{ fontFamily: "sans-serif", color: Darktheme ? 'white' : 'black' }}>
+                    app.json
 
                   </p>
+
+
+
+
+                  <div style={{ borderRadius: 100 }} className="">
+
+                    <ReactMarkdown
+                      className="rounded-5"
+                      children={
+                        `
+  
+  ~~~py
+ {
+  "expo": {
+    "name": "react-native-font-size-techwithzacky",
+    "description": "This project is really great.",
+    "slug": "react-native-font-size-techwithzacky",
+    "privacy": "public",
+    "sdkVersion": "31.0.0",
+    "platforms": ["ios", "android"],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    }
+  }
+}
+
+  ~~~
+
+
+  `}
+                      components={{
+                        code({ node, inline, className, children, ...props }) {
+                          const match = /language-(\w+)/.exec(className || '')
+                          return !inline && match ? (
+                            <SyntaxHighlighter
+                              children={String(children).replace(/\n$/, '')}
+                              style={Darktheme ? oneDark : oneLight}
+                              //tomorrow, atomDark,darcula,vscDarkPlus,vs
+                              //holiTheme,nightOwl,a11yDark,duotoneForest,lucario
+
+                              language={"js"}
+                              PreTag="div"
+                              {...props}
+                            />
+                          ) : (
+                            <code className={className} {...props}>
+                              {children}
+                            </code>
+                          )
+                        }
+                      }}
+                    />
+                  </div>
+
+
+                  <p class="h3  m-4 " style={{ fontFamily: "sans-serif", color: Darktheme ? 'white' : 'black' }}>
+                    Project Look
+
+                  </p>
+
+
+
+
+
+                  <img
+                    src={RNREDUX}
+
+                    className="col-md-8 px-3 "
+
+                  />
+
+
+
+
+
+
+
+                  <p
+                    className="m-5 p"
+                    style={{
+                      color: Darktheme ? '#f0f0f0' : '#242526',
+                      letterSpacing: 1,
+                      fontFamily: "sans-serif",
+                    }}>
+
+                    Follow the same pattern bellow (screenshot), then just copy past
+
+                  </p>
+
+
+
+                  <p class="h3  m-4 " style={{ fontFamily: "sans-serif", color: Darktheme ? 'white' : 'black' }}>
+                    App.js
+
+                  </p>
+
+
+
+
+
+                  <div style={{ borderRadius: 100 }} className="">
+
+                    <ReactMarkdown
+                      className="rounded-5"
+                      children={
+                        `
+  
+  ~~~py
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import FontSize from './app/FontSize'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+
+const reducer = (state = 12, action) => {
+  switch (action.type) {
+    case 'INCREASE_FONT_SIZE':
+      return state !== 28 ? state + 4 : state
+    case 'DECREASE_FONT_SIZE':
+      return state !== 12 ? state - 4 : state
+    default:
+      return state
+  }
+}
+
+const store = createStore(reducer)
+
+export default class App extends React.Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <FontSize />
+      </Provider>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
+
+  ~~~
+
+
+  `}
+                      components={{
+                        code({ node, inline, className, children, ...props }) {
+                          const match = /language-(\w+)/.exec(className || '')
+                          return !inline && match ? (
+                            <SyntaxHighlighter
+                              children={String(children).replace(/\n$/, '')}
+                              style={Darktheme ? oneDark : oneLight}
+                              //tomorrow, atomDark,darcula,vscDarkPlus,vs
+                              //holiTheme,nightOwl,a11yDark,duotoneForest,lucario
+
+                              language={"js"}
+                              PreTag="div"
+                              {...props}
+                            />
+                          ) : (
+                            <code className={className} {...props}>
+                              {children}
+                            </code>
+                          )
+                        }
+                      }}
+                    />
+                  </div>
+
+
 
 
                   <p class="h3  m-4 " style={{ fontFamily: "sans-serif", color: Darktheme ? 'white' : 'black' }}>
 
-                    Implementation
+                    FontSize.js
                   </p>
-
-
-
-                  <p
-                    className="mx-5 p"
-                    style={{
-                      color: Darktheme ? '#f0f0f0' : '#242526',
-                      letterSpacing: 1,
-                      fontFamily: "sans-serif",
-                    }}>
-                    Import this classes first
-
-                  </p>
-
-
 
 
 
@@ -554,147 +741,112 @@ class DjangoAuthModel extends Component {
                         `
   
   ~~~py
- from rest_framework.authentication import TokenAuthentication
- from rest_framework.permissions import IsAuthenticated
-  ~~~
+import React, { Component } from "react";
+import {
+    View,
+    Text,
+    StyleSheet
+} from "react-native";
 
+import { createDrawerNavigator } from 'react-navigation'
+import ScreenOne from './screens/ScreenOne'
+import ScreenTwo from './screens/ScreenTwo'
+import ScreenThree from './screens/ScreenThree'
+import Settings from './screens/Settings'
 
-  `}
-                      components={{
-                        code({ node, inline, className, children, ...props }) {
-                          const match = /language-(\w+)/.exec(className || '')
-                          return !inline && match ? (
-                            <SyntaxHighlighter
-                              children={String(children).replace(/\n$/, '')}
-                              style={Darktheme ? oneDark : oneLight}
-                              //tomorrow, atomDark,darcula,vscDarkPlus,vs
-                              //holiTheme,nightOwl,a11yDark,duotoneForest,lucario
+export default createDrawerNavigator({
+    ScreenOne: ScreenOne,
+    ScreenTwo: ScreenTwo,
+    ScreenThree: ScreenThree,
+    Settings: Settings
+})
 
-                              language={"py"}
-                              PreTag="div"
-                              {...props}
-                            />
-                          ) : (
-                            <code className={className} {...props}>
-                              {children}
-                            </code>
-                          )
-                        }
-                      }}
-                    />
-                  </div>
-
-
-
-
-
-
-
-
-
-
-
-                  <p
-                    className="mx-5 p"
-                    style={{
-                      color: Darktheme ? '#f0f0f0' : '#242526',
-                      letterSpacing: 1,
-                      fontFamily: "sans-serif",
-                    }}>
-                    Then Add this code inside your viewset class
-
-                  </p>
-
-
-
-
-
-
-                  <div style={{ borderRadius: 100 }} className="">
-
-                    <ReactMarkdown
-                      className="rounded-5"
-                      children={
-                        `
-  
-  ~~~py
-authentication_class = [TokenAuthentication, ]
-permission_class = [IsAuthenticated, ]
-  ~~~
-
-
-  `}
-                      components={{
-                        code({ node, inline, className, children, ...props }) {
-                          const match = /language-(\w+)/.exec(className || '')
-                          return !inline && match ? (
-                            <SyntaxHighlighter
-                              children={String(children).replace(/\n$/, '')}
-                              style={Darktheme ? oneDark : oneLight}
-                              //tomorrow, atomDark,darcula,vscDarkPlus,vs
-                              //holiTheme,nightOwl,a11yDark,duotoneForest,lucario
-
-                              language={"py"}
-                              PreTag="div"
-                              {...props}
-                            />
-                          ) : (
-                            <code className={className} {...props}>
-                              {children}
-                            </code>
-                          )
-                        }
-                      }}
-                    />
-                  </div>
-
-
-
-                  <p
-                    className="mx-5 p"
-                    style={{
-                      color: Darktheme ? '#f0f0f0' : '#242526',
-                      letterSpacing: 1,
-                      fontFamily: "sans-serif",
-                    }}>
-
-                    Then add this <code>Authorization</code> paramiter to your axios or fetch function like this
-                  </p>
-
-
-
-
-
-                  <div style={{ borderRadius: 100 }} className="">
-
-                    <ReactMarkdown
-                      className="rounded-5"
-                      children={
-                        `
-  
-  ~~~py
-
- const token = this.props.token
- 
- getData = () => {
-  fetch('http://localhost:8000/api/data', {
-    method:'Get',
-    headers: {
-      'Content-Type': 'application/json',
-      // may be you're getting as a prop (other module)
-      Authorization: token // you can also do this 'Token ${this.props.token}',
-    },
-    body: JSON.stringify(this.state.data)
-  })
-  .then(data => data.json())
-  .then(
-    data => {
-      this.setState({data: data})
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center'
     }
-  )
-  .catch( error => console.error(error))
+});
+  ~~~
+
+
+  `}
+                      components={{
+                        code({ node, inline, className, children, ...props }) {
+                          const match = /language-(\w+)/.exec(className || '')
+                          return !inline && match ? (
+                            <SyntaxHighlighter
+                              children={String(children).replace(/\n$/, '')}
+                              style={Darktheme ? oneDark : oneLight}
+                              //tomorrow, atomDark,darcula,vscDarkPlus,vs
+                              //holiTheme,nightOwl,a11yDark,duotoneForest,lucario
+
+                              language={"js"}
+                              PreTag="div"
+                              {...props}
+                            />
+                          ) : (
+                            <code className={className} {...props}>
+                              {children}
+                            </code>
+                          )
+                        }
+                      }}
+                    />
+                  </div>
+
+
+
+
+
+
+                  <p class="h3  m-4 " style={{ fontFamily: "sans-serif", color: Darktheme ? 'white' : 'black' }}>
+
+                    CustomText.js
+                  </p>
+
+
+
+                  <div style={{ borderRadius: 100 }} className="">
+
+                    <ReactMarkdown
+                      className="rounded-5"
+                      children={
+                        `
+  
+  ~~~py
+import React, { Component } from "react";
+import {
+    View,
+    Text,
+    StyleSheet
+} from "react-native";
+import { connect } from 'react-redux'
+
+class CustomText extends Component {
+    render() {
+        return (
+            <Text style={{ fontSize: this.props.fontSize }}>{this.props.children}</Text>
+        );
+    }
 }
 
+const mapStateToProps = (state) => {
+    return {
+        fontSize: state
+    }
+}
+
+export default connect(mapStateToProps)(CustomText);
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center'
+    }
+});
   ~~~
 
 
@@ -729,6 +881,92 @@ permission_class = [IsAuthenticated, ]
 
 
 
+                  <p class="h3  m-4 " style={{ fontFamily: "sans-serif", color: Darktheme ? 'white' : 'black' }}>
+
+                    Screens
+                  </p>
+
+
+                  <p
+                    className="m-5 p"
+                    style={{
+                      color: Darktheme ? '#f0f0f0' : '#242526',
+                      letterSpacing: 1,
+                      fontFamily: "sans-serif",
+                    }}>
+                    In the screens you can use your own test screen, like this.
+
+                  </p>
+
+
+
+
+
+
+                  <div style={{ borderRadius: 100 }} className="">
+
+                    <ReactMarkdown
+                      className="rounded-5"
+                      children={
+                        `
+  
+  ~~~py
+import React, { Component } from "react";
+import {
+    View,
+    StyleSheet
+} from "react-native";
+import Text from '../components/CustomText'
+
+class TestScreen extends Component {
+    render() {
+        return (
+            <View style={styles.container}>
+                <Text>Hello world</Text>
+            </View>
+        );
+    }
+}
+export default ScreenThree;
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center'
+    }
+});
+  ~~~
+
+
+  `}
+                      components={{
+                        code({ node, inline, className, children, ...props }) {
+                          const match = /language-(\w+)/.exec(className || '')
+                          return !inline && match ? (
+                            <SyntaxHighlighter
+                              children={String(children).replace(/\n$/, '')}
+                              style={Darktheme ? oneDark : oneLight}
+                              //tomorrow, atomDark,darcula,vscDarkPlus,vs
+                              //holiTheme,nightOwl,a11yDark,duotoneForest,lucario
+
+                              language={"js"}
+                              PreTag="div"
+                              {...props}
+                            />
+                          ) : (
+                            <code className={className} {...props}>
+                              {children}
+                            </code>
+                          )
+                        }
+                      }}
+                    />
+                  </div>
+
+
+
+
                   <p
                     className="m-5 p"
                     style={{
@@ -756,7 +994,7 @@ permission_class = [IsAuthenticated, ]
 
                   <Comments
                     Darktheme={Darktheme}
-                    tutorialID={8}
+                    tutorialID={17}
                     getCommented_and_Visitors_Peples={this.getCommented_and_Visitors_Peples}
                     tutorialName={'Electron.js Multi-Platform Architecture Deployment'}
                   />
@@ -891,4 +1129,4 @@ permission_class = [IsAuthenticated, ]
     );
   }
 }
-export default DjangoAuthModel;
+export default RNFontSize;

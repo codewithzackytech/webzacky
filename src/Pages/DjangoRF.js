@@ -516,7 +516,7 @@ class DjangoRF extends Component {
                     }}>
                     At this time there's no good solution on internet Implementing this Solution specially the second Technique which is in the bellow. In this tutorial i will show you Two technique of how to implement Login system in django,
                     <code>First Technique</code> is if you want kind of, let your user login and validate that credential and at the same time you want return user token, use this technique
-                    <code> The Second Technique</code> is when user login if you want let system return token as well as information about the login user, so if this is your problem let's get stated.
+                    <code> The Second Technique</code> is when user login if you want let system return token as well as information about the login user, so if this is your problem let's get started.
                   </p>
 
 
@@ -588,7 +588,7 @@ class DjangoRF extends Component {
                       letterSpacing: 1,
                       fontFamily: "sans-serif",
                     }}>
-                    I'm Assuming you that every setup, setting the app, migrations, urls, but the only problem you have is how to implement login functionality,
+                    I'm Assuming you that every thing is setup, setting the app, migrations, urls, but the only problem you have is how to implement login functionality,
                     Open your django <code>settings.py</code> and add these two in your <code>INSTALLED_APPS</code>
                   </p>
 

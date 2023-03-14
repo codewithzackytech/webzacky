@@ -203,6 +203,7 @@ class NavBar extends Component {
                         />
                     </a>
 
+
                     <div
                         class="collapse navbar-collapse navSpace ml-5"
                         id="navbarSupportedContent"
@@ -231,16 +232,8 @@ class NavBar extends Component {
                                 </a>
                             </li>
 
-                            <li class="nav-item">
-                                <a
-                                    class={`nav-link active ${Darktheme ? 'text-white' : 'text-dark'}`}
 
-                                    aria-current="page"
-                                    href="/"
-                                >
-                                    Projects
-                                </a>
-                            </li>
+
                             <div class="nav-item dropdown">
 
                                 <a
@@ -253,15 +246,70 @@ class NavBar extends Component {
                                     {/* {this.state.new_user == undefined || null
                                         ? "More"
                                         : this.state.new_user} */}
-                                    More
+                                    Projects
                                 </a>
 
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                                     <div>
                                         <li >
-                                            <a class="dropdown-item" href="https://github.com/codewithzackytech/privacypolicy">
-                                                Privacy Policy
+                                            <a class="dropdown-item" href="https://github.com/codewithzackytech/ZalsonGame">
+                                                Zalson 3D game
+                                            </a>
+                                        </li>
+
+                                        <li >
+                                            <a class="dropdown-item" href="https://github.com/codewithzackytech/Simple2DGame">
+                                                2D beginner game
+                                            </a>
+                                        </li>
+
+
+                                        <li >
+                                            <a class="dropdown-item" href="https://github.com/codewithzackytech/Godom_clone">
+                                                Godom4 clone
+                                            </a>
+                                        </li>
+
+
+                                    </div>
+
+
+
+
+
+
+
+                                </ul>
+                            </div>
+
+                            <div class="nav-item dropdown">
+
+                                <a
+                                    class={`nav-link dropdown-toggle ${Darktheme ? 'text-white' : 'text-muted'}`}
+                                    href="#"
+                                    id="navbarDropdown"
+                                    role="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    {/* {this.state.new_user == undefined || null
+                                        ? "More"
+                                        : this.state.new_user} */}
+                                    RealTime Software
+                                </a>
+
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                                    <div>
+                                        <li >
+                                            <a class="dropdown-item" href="https://english-somali-dictionary.uptodown.com/windows">
+                                                English Somali Dictionary For PC
+                                            </a>
+                                        </li>
+
+                                        <li >
+                                            <a class="dropdown-item" href="https://english-somali-dictionary.uptodown.com/android">
+                                                English Somali Dictionary For Mobile
                                             </a>
                                         </li>
 
@@ -272,6 +320,12 @@ class NavBar extends Component {
 
                                 </ul>
                             </div>
+
+
+
+
+
+
                         </ul>
 
                         {/* <span

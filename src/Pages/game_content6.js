@@ -8,7 +8,7 @@ import {
 
 } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { FaWhatsapp, FaFacebook, FaLinkedin, FaGithub, FaCoffee, FaSun, FaMoon, FaBars, FaTimes as FaClose, FaClock, FaComment, FaEye, FaSign, FaGamepad, FaLeaf, FaUser } from 'react-icons/fa';
-import AuthorBiof from "../components/AuthorBiof";
+
 import code from "../code.";
 
 import icon from "../assets/images/navIcon.png";
@@ -16,6 +16,8 @@ import icon2 from "../assets/images/icon.png";
 import icon3 from "../assets/images/icon.png";
 import icon4 from "../assets/images/icon4.png";
 import devImg from "../assets/images/dev.jpg";
+import zalson from "../assets/images/godot/zalson.jpg";
+
 
 import Login from "../Auth/Login";
 import Register from "../Auth/Register";
@@ -51,12 +53,12 @@ import axios from "axios";
 
 import {
   Label,
-  Button,
-  Input,
   Accordion,
   AccordionBody,
   AccordionHeader,
   AccordionItem,
+  Button,
+  Input,
   Form,
   ModalHeader,
   ModalBody,
@@ -66,9 +68,10 @@ import {
 } from "reactstrap";
 import AuthorBio from "../components/AuthorBio";
 import NavBar from "../components/NavBar";
+import AuthorBiof from "../components/AuthorBiof";
 import Comments from "../components/comments";
 
-class DjangoAuthModel extends Component {
+class Game_Content6 extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -85,6 +88,7 @@ class DjangoAuthModel extends Component {
       data: 'this is \n bag',
       number_of_comment: 0,
       views: 0
+
     };
   }
 
@@ -92,7 +96,7 @@ class DjangoAuthModel extends Component {
 
 
   getCommented_and_Visitors_Peples = () => {
-    axios.get(`/api/views/${8}`)
+    axios.get(`/api/views/${11}`)
       .then((response) => {
 
 
@@ -106,7 +110,7 @@ class DjangoAuthModel extends Component {
       .finally(() => console.log('request completed!'))
 
 
-    axios.get(`/api/comments/${8}`)
+    axios.get(`/api/comments/${11}`)
       .then((response) => {
 
         console.log(response.data.length)
@@ -120,6 +124,8 @@ class DjangoAuthModel extends Component {
       .finally(() => console.log('request completed!'))
   }
   componentDidMount = () => this.getCommented_and_Visitors_Peples()
+
+
 
   LoginInfoModalToggle = () => {
     this.setState({ LoginInfoModal: !this.state.LoginInfoModal });
@@ -197,7 +203,6 @@ class DjangoAuthModel extends Component {
       .finally(() => console.log("request completed!"));
   };
 
-
   handleTheme = () => {
     this.setState({ isDark: !this.state.isDark })
   }
@@ -214,8 +219,6 @@ class DjangoAuthModel extends Component {
           handleTheme={this.handleTheme}
           Darktheme={Darktheme}
         />
-
-
         <div
           class={`offcanvas offcanvas-start ${this.state.isDark ? "text-white" : "text-dark"
             }`}
@@ -242,6 +245,7 @@ class DjangoAuthModel extends Component {
                   <FaLeaf size={20} /> Web Zacky {" " + " "}
                 </Label>
               </a>
+
 
             </div>
             <a>
@@ -360,24 +364,24 @@ class DjangoAuthModel extends Component {
 
 
               <Label>____________</Label>
+              <a href='https://github.com/codewithzackytech'>
+                <Button
 
-              <Button
+                  className={`mr-2 btn ${Darktheme ? 'btn-outline-dark' : 'btn-dark'} px-5`}
 
-                className={`mr-2 btn ${Darktheme ? 'btn-outline-dark' : 'btn-dark'} px-5`}
-
-                onClick={() => null}
-                style={{
-                  borderWidth: 0,
-                  // backgroundColor: "green",
-                  // color: "white",
-                  // borderRadius: 10,
-                  fontFamily: 'revert',
-                  letterSpacing: 1
-                }}
-              >
-                Free Opensource Games <FaGamepad size={30} />
-              </Button>
-
+                  onClick={() => null}
+                  style={{
+                    borderWidth: 0,
+                    // backgroundColor: "green",
+                    // color: "white",
+                    // borderRadius: 10,
+                    fontFamily: 'revert',
+                    letterSpacing: 1
+                  }}
+                >
+                  Free Opensource Games <FaGamepad size={30} />
+                </Button>
+              </a>
 
 
 
@@ -472,6 +476,7 @@ class DjangoAuthModel extends Component {
               class="col-md-3 col-lg-3 d-md-block sidebar collapse mt-0"
               style={{ backgroundColor: Darktheme ? '#242526' : "#fffefe" }}
             >
+
               <AuthorBio
 
                 Darktheme={Darktheme}
@@ -495,11 +500,10 @@ class DjangoAuthModel extends Component {
                     class="h3  m-4 "
                     style={{ fontFamily: "sans-serif", color: Darktheme ? 'white' : 'black' }}
                   >
-                    Django Model Authentication Permission
+                    Zalson 3D Game Built with Godot Engine
                   </p>
-
                   <p className="mx-4" style={{ color: Darktheme ? 'grey' : 'grey' }}>
-                    <FaClock className="mr-2" />  Jan 7, 2022 <FaEye className="mx-2" /> {this.state.views} views
+                    <FaClock className="mr-2" />  Dec 3, 2022 <FaEye className="mx-2" /> {this.state.views} views
                   </p>
 
 
@@ -509,221 +513,58 @@ class DjangoAuthModel extends Component {
 
 
 
+                  <p class="h3  m-4 " style={{ fontFamily: "sans-serif", color: Darktheme ? 'white' : 'black' }}>
+                    Introduction
+
+                  </p>
+
+
 
 
 
                   <p
-                    className="mx-5 p"
+                    className="m-5 p"
                     style={{
                       color: Darktheme ? '#f0f0f0' : '#242526',
                       letterSpacing: 1,
                       fontFamily: "sans-serif",
                     }}>
-                    if you're developing Django BackEnd and every thing is working but you need permission some of your view functions, may be you wanna allow authenticated users to view/see some of your view functions if that is your problem this tutorial is for you, so let's begin.
-
+                    Zalson 3D was my first game in godot, you may suprise bcz godot is hard but first i'm tried unity even unity was my first engine i got so many problems like level design, player animation, enemy AI, but when i swiched godot all this implementation comes much easier then unity, so i started godot having 1-year of unity experience, the after may hello world games i developed Zalson 3D.
                   </p>
+
+
+
+
+
+
+
+                  <img
+                    src={zalson}
+
+                    className="col-md-8 mx-3"
+
+                  />
+
+
+
 
 
                   <p class="h3  m-4 " style={{ fontFamily: "sans-serif", color: Darktheme ? 'white' : 'black' }}>
+                    Source Code
 
-                    Implementation
                   </p>
 
 
-
                   <p
-                    className="mx-5 p"
+                    className="m-5 p"
                     style={{
                       color: Darktheme ? '#f0f0f0' : '#242526',
                       letterSpacing: 1,
                       fontFamily: "sans-serif",
                     }}>
-                    Import this classes first
+                    <a href="https://github.com/codewithzackytech/ZalsonGame"><span className="text-info">here</span></a> is the complete project
 
                   </p>
-
-
-
-
-
-                  <div style={{ borderRadius: 100 }} className="">
-
-                    <ReactMarkdown
-                      className="rounded-5"
-                      children={
-                        `
-  
-  ~~~py
- from rest_framework.authentication import TokenAuthentication
- from rest_framework.permissions import IsAuthenticated
-  ~~~
-
-
-  `}
-                      components={{
-                        code({ node, inline, className, children, ...props }) {
-                          const match = /language-(\w+)/.exec(className || '')
-                          return !inline && match ? (
-                            <SyntaxHighlighter
-                              children={String(children).replace(/\n$/, '')}
-                              style={Darktheme ? oneDark : oneLight}
-                              //tomorrow, atomDark,darcula,vscDarkPlus,vs
-                              //holiTheme,nightOwl,a11yDark,duotoneForest,lucario
-
-                              language={"py"}
-                              PreTag="div"
-                              {...props}
-                            />
-                          ) : (
-                            <code className={className} {...props}>
-                              {children}
-                            </code>
-                          )
-                        }
-                      }}
-                    />
-                  </div>
-
-
-
-
-
-
-
-
-
-
-
-                  <p
-                    className="mx-5 p"
-                    style={{
-                      color: Darktheme ? '#f0f0f0' : '#242526',
-                      letterSpacing: 1,
-                      fontFamily: "sans-serif",
-                    }}>
-                    Then Add this code inside your viewset class
-
-                  </p>
-
-
-
-
-
-
-                  <div style={{ borderRadius: 100 }} className="">
-
-                    <ReactMarkdown
-                      className="rounded-5"
-                      children={
-                        `
-  
-  ~~~py
-authentication_class = [TokenAuthentication, ]
-permission_class = [IsAuthenticated, ]
-  ~~~
-
-
-  `}
-                      components={{
-                        code({ node, inline, className, children, ...props }) {
-                          const match = /language-(\w+)/.exec(className || '')
-                          return !inline && match ? (
-                            <SyntaxHighlighter
-                              children={String(children).replace(/\n$/, '')}
-                              style={Darktheme ? oneDark : oneLight}
-                              //tomorrow, atomDark,darcula,vscDarkPlus,vs
-                              //holiTheme,nightOwl,a11yDark,duotoneForest,lucario
-
-                              language={"py"}
-                              PreTag="div"
-                              {...props}
-                            />
-                          ) : (
-                            <code className={className} {...props}>
-                              {children}
-                            </code>
-                          )
-                        }
-                      }}
-                    />
-                  </div>
-
-
-
-                  <p
-                    className="mx-5 p"
-                    style={{
-                      color: Darktheme ? '#f0f0f0' : '#242526',
-                      letterSpacing: 1,
-                      fontFamily: "sans-serif",
-                    }}>
-
-                    Then add this <code>Authorization</code> paramiter to your axios or fetch function like this
-                  </p>
-
-
-
-
-
-                  <div style={{ borderRadius: 100 }} className="">
-
-                    <ReactMarkdown
-                      className="rounded-5"
-                      children={
-                        `
-  
-  ~~~py
-
- const token = this.props.token
- 
- getData = () => {
-  fetch('http://localhost:8000/api/data', {
-    method:'Get',
-    headers: {
-      'Content-Type': 'application/json',
-      // may be you're getting as a prop (other module)
-      Authorization: token // you can also do this 'Token ${this.props.token}',
-    },
-    body: JSON.stringify(this.state.data)
-  })
-  .then(data => data.json())
-  .then(
-    data => {
-      this.setState({data: data})
-    }
-  )
-  .catch( error => console.error(error))
-}
-
-  ~~~
-
-
-  `}
-                      components={{
-                        code({ node, inline, className, children, ...props }) {
-                          const match = /language-(\w+)/.exec(className || '')
-                          return !inline && match ? (
-                            <SyntaxHighlighter
-                              children={String(children).replace(/\n$/, '')}
-                              style={Darktheme ? oneDark : oneLight}
-                              //tomorrow, atomDark,darcula,vscDarkPlus,vs
-                              //holiTheme,nightOwl,a11yDark,duotoneForest,lucario
-
-                              language={"js"}
-                              PreTag="div"
-                              {...props}
-                            />
-                          ) : (
-                            <code className={className} {...props}>
-                              {children}
-                            </code>
-                          )
-                        }
-                      }}
-                    />
-                  </div>
-
-
 
 
 
@@ -756,7 +597,7 @@ permission_class = [IsAuthenticated, ]
 
                   <Comments
                     Darktheme={Darktheme}
-                    tutorialID={8}
+                    tutorialID={11}
                     getCommented_and_Visitors_Peples={this.getCommented_and_Visitors_Peples}
                     tutorialName={'Electron.js Multi-Platform Architecture Deployment'}
                   />
@@ -891,4 +732,4 @@ permission_class = [IsAuthenticated, ]
     );
   }
 }
-export default DjangoAuthModel;
+export default Game_Content6;

@@ -7,8 +7,8 @@ import {
 
 
 } from 'react-syntax-highlighter/dist/esm/styles/prism'
-import { FaWhatsapp, FaFacebook, FaLinkedin, FaGithub, FaCoffee, FaSun, FaMoon, FaBars, FaTimes as FaClose, FaClock, FaComment, FaEye, FaSign, FaGamepad, FaLeaf, FaUser } from 'react-icons/fa';
-import AuthorBiof from "../components/AuthorBiof";
+import { FaWhatsapp, FaFacebook, FaLinkedin, FaGithub, FaCoffee, FaSun, FaMoon, FaBars, FaTimes as FaClose, FaClock, FaComment, FaEye, FaSign, FaGamepad, FaUser, FaLeaf } from 'react-icons/fa';
+
 import code from "../code.";
 
 import icon from "../assets/images/navIcon.png";
@@ -51,12 +51,13 @@ import axios from "axios";
 
 import {
   Label,
-  Button,
-  Input,
   Accordion,
   AccordionBody,
   AccordionHeader,
   AccordionItem,
+
+  Button,
+  Input,
   Form,
   ModalHeader,
   ModalBody,
@@ -64,11 +65,12 @@ import {
   ModalFooter,
   FormGroup,
 } from "reactstrap";
-import AuthorBio from "../components/AuthorBio";
 import NavBar from "../components/NavBar";
+import AuthorBio from "../components/AuthorBio";
+import AuthorBiof from "../components/AuthorBiof";
 import Comments from "../components/comments";
 
-class DjangoAuthModel extends Component {
+class NodeJWT extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -92,7 +94,7 @@ class DjangoAuthModel extends Component {
 
 
   getCommented_and_Visitors_Peples = () => {
-    axios.get(`/api/views/${8}`)
+    axios.get(`/api/views/${4}`)
       .then((response) => {
 
 
@@ -106,7 +108,7 @@ class DjangoAuthModel extends Component {
       .finally(() => console.log('request completed!'))
 
 
-    axios.get(`/api/comments/${8}`)
+    axios.get(`/api/comments/${4}`)
       .then((response) => {
 
         console.log(response.data.length)
@@ -120,6 +122,9 @@ class DjangoAuthModel extends Component {
       .finally(() => console.log('request completed!'))
   }
   componentDidMount = () => this.getCommented_and_Visitors_Peples()
+
+
+
 
   LoginInfoModalToggle = () => {
     this.setState({ LoginInfoModal: !this.state.LoginInfoModal });
@@ -202,8 +207,6 @@ class DjangoAuthModel extends Component {
     this.setState({ isDark: !this.state.isDark })
   }
 
-
-
   render() {
     const path = '${path.join(__dirname'
     const Darktheme = this.state.isDark
@@ -214,8 +217,6 @@ class DjangoAuthModel extends Component {
           handleTheme={this.handleTheme}
           Darktheme={Darktheme}
         />
-
-
         <div
           class={`offcanvas offcanvas-start ${this.state.isDark ? "text-white" : "text-dark"
             }`}
@@ -242,6 +243,7 @@ class DjangoAuthModel extends Component {
                   <FaLeaf size={20} /> Web Zacky {" " + " "}
                 </Label>
               </a>
+
 
             </div>
             <a>
@@ -360,24 +362,24 @@ class DjangoAuthModel extends Component {
 
 
               <Label>____________</Label>
+              <a href='https://github.com/codewithzackytech'>
+                <Button
 
-              <Button
+                  className={`mr-2 btn ${Darktheme ? 'btn-outline-dark' : 'btn-dark'} px-5`}
 
-                className={`mr-2 btn ${Darktheme ? 'btn-outline-dark' : 'btn-dark'} px-5`}
-
-                onClick={() => null}
-                style={{
-                  borderWidth: 0,
-                  // backgroundColor: "green",
-                  // color: "white",
-                  // borderRadius: 10,
-                  fontFamily: 'revert',
-                  letterSpacing: 1
-                }}
-              >
-                Free Opensource Games <FaGamepad size={30} />
-              </Button>
-
+                  onClick={() => null}
+                  style={{
+                    borderWidth: 0,
+                    // backgroundColor: "green",
+                    // color: "white",
+                    // borderRadius: 10,
+                    fontFamily: 'revert',
+                    letterSpacing: 1
+                  }}
+                >
+                  Free Opensource Games <FaGamepad size={30} />
+                </Button>
+              </a>
 
 
 
@@ -472,6 +474,8 @@ class DjangoAuthModel extends Component {
               class="col-md-3 col-lg-3 d-md-block sidebar collapse mt-0"
               style={{ backgroundColor: Darktheme ? '#242526' : "#fffefe" }}
             >
+
+
               <AuthorBio
 
                 Darktheme={Darktheme}
@@ -495,11 +499,10 @@ class DjangoAuthModel extends Component {
                     class="h3  m-4 "
                     style={{ fontFamily: "sans-serif", color: Darktheme ? 'white' : 'black' }}
                   >
-                    Django Model Authentication Permission
+                    Implementation with JWT using Node.js / Express.js
                   </p>
-
                   <p className="mx-4" style={{ color: Darktheme ? 'grey' : 'grey' }}>
-                    <FaClock className="mr-2" />  Jan 7, 2022 <FaEye className="mx-2" /> {this.state.views} views
+                    <FaClock className="mr-2" />  Jan 17, 2023 <FaEye className="mx-2" /> {this.state.views} views
                   </p>
 
 
@@ -509,6 +512,55 @@ class DjangoAuthModel extends Component {
 
 
 
+                  <p class="h3  m-4 " style={{ fontFamily: "sans-serif", color: Darktheme ? 'white' : 'black' }}>
+                    Installation
+
+                  </p>
+
+
+
+
+
+
+
+                  <div style={{ borderRadius: 100 }} className="">
+
+                    <ReactMarkdown
+                      className="rounded-5"
+                      children={
+                        `
+  
+  ~~~py
+ npm install jsonwebtoken cookie-parser express
+  ~~~
+
+
+  `}
+                      components={{
+                        code({ node, inline, className, children, ...props }) {
+                          const match = /language-(\w+)/.exec(className || '')
+                          return !inline && match ? (
+                            <SyntaxHighlighter
+                              children={String(children).replace(/\n$/, '')}
+                              style={Darktheme ? oneDark : oneLight}
+                              //tomorrow, atomDark,darcula,vscDarkPlus,vs
+                              //holiTheme,nightOwl,a11yDark,duotoneForest,lucario
+
+                              language={"cmd"}
+                              PreTag="div"
+                              {...props}
+                            />
+                          ) : (
+                            <code className={className} {...props}>
+                              {children}
+                            </code>
+                          )
+                        }
+                      }}
+                    />
+                  </div>
+
+
 
 
 
@@ -519,27 +571,36 @@ class DjangoAuthModel extends Component {
                       letterSpacing: 1,
                       fontFamily: "sans-serif",
                     }}>
-                    if you're developing Django BackEnd and every thing is working but you need permission some of your view functions, may be you wanna allow authenticated users to view/see some of your view functions if that is your problem this tutorial is for you, so let's begin.
+                    If you installed these dependences you're good to go.
 
                   </p>
+
+
+
+
+                  <p class="h3  m-4 " style={{ fontFamily: "sans-serif", color: Darktheme ? 'white' : 'black' }}>
+                    Implementation
+
+                  </p>
+
+                  <p
+                    className="mx-5 p"
+                    style={{
+                      color: Darktheme ? '#f0f0f0' : '#242526',
+                      letterSpacing: 1,
+                      fontFamily: "sans-serif",
+                    }}>
+                    In this tutorial we are building simple <code>Login</code> page and Request <code>Middleware</code> for checking if user authenticated or not.
+
+                  </p>
+
+
+
 
 
                   <p class="h3  m-4 " style={{ fontFamily: "sans-serif", color: Darktheme ? 'white' : 'black' }}>
 
-                    Implementation
-                  </p>
-
-
-
-                  <p
-                    className="mx-5 p"
-                    style={{
-                      color: Darktheme ? '#f0f0f0' : '#242526',
-                      letterSpacing: 1,
-                      fontFamily: "sans-serif",
-                    }}>
-                    Import this classes first
-
+                    Login & JWT
                   </p>
 
 
@@ -554,147 +615,38 @@ class DjangoAuthModel extends Component {
                         `
   
   ~~~py
- from rest_framework.authentication import TokenAuthentication
- from rest_framework.permissions import IsAuthenticated
-  ~~~
+ const jwt = require('jsonwebtoken')
 
-
-  `}
-                      components={{
-                        code({ node, inline, className, children, ...props }) {
-                          const match = /language-(\w+)/.exec(className || '')
-                          return !inline && match ? (
-                            <SyntaxHighlighter
-                              children={String(children).replace(/\n$/, '')}
-                              style={Darktheme ? oneDark : oneLight}
-                              //tomorrow, atomDark,darcula,vscDarkPlus,vs
-                              //holiTheme,nightOwl,a11yDark,duotoneForest,lucario
-
-                              language={"py"}
-                              PreTag="div"
-                              {...props}
-                            />
-                          ) : (
-                            <code className={className} {...props}>
-                              {children}
-                            </code>
-                          )
-                        }
-                      }}
-                    />
-                  </div>
-
-
-
-
-
-
-
-
-
-
-
-                  <p
-                    className="mx-5 p"
-                    style={{
-                      color: Darktheme ? '#f0f0f0' : '#242526',
-                      letterSpacing: 1,
-                      fontFamily: "sans-serif",
-                    }}>
-                    Then Add this code inside your viewset class
-
-                  </p>
-
-
-
-
-
-
-                  <div style={{ borderRadius: 100 }} className="">
-
-                    <ReactMarkdown
-                      className="rounded-5"
-                      children={
-                        `
-  
-  ~~~py
-authentication_class = [TokenAuthentication, ]
-permission_class = [IsAuthenticated, ]
-  ~~~
-
-
-  `}
-                      components={{
-                        code({ node, inline, className, children, ...props }) {
-                          const match = /language-(\w+)/.exec(className || '')
-                          return !inline && match ? (
-                            <SyntaxHighlighter
-                              children={String(children).replace(/\n$/, '')}
-                              style={Darktheme ? oneDark : oneLight}
-                              //tomorrow, atomDark,darcula,vscDarkPlus,vs
-                              //holiTheme,nightOwl,a11yDark,duotoneForest,lucario
-
-                              language={"py"}
-                              PreTag="div"
-                              {...props}
-                            />
-                          ) : (
-                            <code className={className} {...props}>
-                              {children}
-                            </code>
-                          )
-                        }
-                      }}
-                    />
-                  </div>
-
-
-
-                  <p
-                    className="mx-5 p"
-                    style={{
-                      color: Darktheme ? '#f0f0f0' : '#242526',
-                      letterSpacing: 1,
-                      fontFamily: "sans-serif",
-                    }}>
-
-                    Then add this <code>Authorization</code> paramiter to your axios or fetch function like this
-                  </p>
-
-
-
-
-
-                  <div style={{ borderRadius: 100 }} className="">
-
-                    <ReactMarkdown
-                      className="rounded-5"
-                      children={
-                        `
-  
-  ~~~py
-
- const token = this.props.token
- 
- getData = () => {
-  fetch('http://localhost:8000/api/data', {
-    method:'Get',
-    headers: {
-      'Content-Type': 'application/json',
-      // may be you're getting as a prop (other module)
-      Authorization: token // you can also do this 'Token ${this.props.token}',
-    },
-    body: JSON.stringify(this.state.data)
-  })
-  .then(data => data.json())
-  .then(
-    data => {
-      this.setState({data: data})
-    }
-  )
-  .catch( error => console.error(error))
+const getUser = async (username) => {
+    return {useId: 123, password: 'align item', username:username}
 }
 
+
+
+module.exports = async (req, res) => {
+
+    const {username, password} = req.body;
+
+    const user = await getUser(username)
+
+    if (user.password !== password){
+        return res.status(403).json({
+            error: "invalid login",
+        })
+    }
+
+
+    /// important part
+
+    const token = jwt.sign(user, process.env.MY_SECRET, {expiresIn:"10s"})
+
+    res.cookie("jwtToken",token, {
+        httpOnly:true
+    })
+    console.log({"username": user})
+    return res.redirect('/welcome')
+
+}
   ~~~
 
 
@@ -729,6 +681,192 @@ permission_class = [IsAuthenticated, ]
 
 
 
+
+                  <p
+                    className="mx-5 p"
+                    style={{
+                      color: Darktheme ? '#f0f0f0' : '#242526',
+                      letterSpacing: 1,
+                      fontFamily: "sans-serif",
+                    }}>
+
+                    Use this router as login router for example like this.
+                  </p>
+
+
+
+
+                  <div style={{ borderRadius: 100 }} className="">
+
+                    <ReactMarkdown
+                      className="rounded-5"
+                      children={
+                        `
+  
+  ~~~py
+ app.post('/login', loginRouter)
+  ~~~
+
+
+  `}
+                      components={{
+                        code({ node, inline, className, children, ...props }) {
+                          const match = /language-(\w+)/.exec(className || '')
+                          return !inline && match ? (
+                            <SyntaxHighlighter
+                              children={String(children).replace(/\n$/, '')}
+                              style={Darktheme ? oneDark : oneLight}
+                              //tomorrow, atomDark,darcula,vscDarkPlus,vs
+                              //holiTheme,nightOwl,a11yDark,duotoneForest,lucario
+
+                              language={"js"}
+                              PreTag="div"
+                              {...props}
+                            />
+                          ) : (
+                            <code className={className} {...props}>
+                              {children}
+                            </code>
+                          )
+                        }
+                      }}
+                    />
+                  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  <p class="h3  m-4 " style={{ fontFamily: "sans-serif", color: Darktheme ? 'white' : 'black' }}>
+
+                    Middleware
+                  </p>
+
+
+
+
+
+                  <div style={{ borderRadius: 100 }} className="">
+
+                    <ReactMarkdown
+                      className="rounded-5"
+                      children={
+                        `
+  
+  ~~~py
+const jwt = require('jsonwebtoken')
+
+module.exports = (req, res, next) => {
+    const token = req.cookies.jwtToken
+    try{
+            const user = jwt.verify(token, process.env.MY_SECRET)
+            next()
+    }catch(error) {
+            res.clearCookie('jwtToken')
+            return res.redirect('/')
+    }
+}
+  ~~~
+
+
+  `}
+                      components={{
+                        code({ node, inline, className, children, ...props }) {
+                          const match = /language-(\w+)/.exec(className || '')
+                          return !inline && match ? (
+                            <SyntaxHighlighter
+                              children={String(children).replace(/\n$/, '')}
+                              style={Darktheme ? oneDark : oneLight}
+                              //tomorrow, atomDark,darcula,vscDarkPlus,vs
+                              //holiTheme,nightOwl,a11yDark,duotoneForest,lucario
+
+                              language={"js"}
+                              PreTag="div"
+                              {...props}
+                            />
+                          ) : (
+                            <code className={className} {...props}>
+                              {children}
+                            </code>
+                          )
+                        }
+                      }}
+                    />
+                  </div>
+
+
+
+                  <p
+                    className="mx-5 p"
+                    style={{
+                      color: Darktheme ? '#f0f0f0' : '#242526',
+                      letterSpacing: 1,
+                      fontFamily: "sans-serif",
+                    }}>
+                    To Use this Middleware Put it center of your Express Router like this.
+
+                  </p>
+
+
+
+
+
+                  <div style={{ borderRadius: 100 }} className="">
+
+                    <ReactMarkdown
+                      className="rounded-5"
+                      children={
+                        `
+  
+  ~~~py
+ app.post('/your-rout', cookieJwtAuth, something-router)
+
+  ~~~
+
+
+  `}
+                      components={{
+                        code({ node, inline, className, children, ...props }) {
+                          const match = /language-(\w+)/.exec(className || '')
+                          return !inline && match ? (
+                            <SyntaxHighlighter
+                              children={String(children).replace(/\n$/, '')}
+                              style={Darktheme ? oneDark : oneLight}
+                              //tomorrow, atomDark,darcula,vscDarkPlus,vs
+                              //holiTheme,nightOwl,a11yDark,duotoneForest,lucario
+
+                              language={"cmd"}
+                              PreTag="div"
+                              {...props}
+                            />
+                          ) : (
+                            <code className={className} {...props}>
+                              {children}
+                            </code>
+                          )
+                        }
+                      }}
+                    />
+                  </div>
+
+
+
+
+
+
+
+
+
                   <p
                     className="m-5 p"
                     style={{
@@ -736,8 +874,8 @@ permission_class = [IsAuthenticated, ]
                       letterSpacing: 1,
                       fontFamily: "sans-serif",
                     }}>
-
-                    Happy Coding <FaCoffee />
+                    Happy Coding
+                    <FaCoffee />
                   </p>
 
 
@@ -754,11 +892,16 @@ permission_class = [IsAuthenticated, ]
 
 
 
+
+
+
+
+
                   <Comments
                     Darktheme={Darktheme}
-                    tutorialID={8}
+                    tutorialID={4}
                     getCommented_and_Visitors_Peples={this.getCommented_and_Visitors_Peples}
-                    tutorialName={'Electron.js Multi-Platform Architecture Deployment'}
+                    tutorialName={'Implementation with JWT using Node.js / Express.js'}
                   />
 
 
@@ -891,4 +1034,4 @@ permission_class = [IsAuthenticated, ]
     );
   }
 }
-export default DjangoAuthModel;
+export default NodeJWT;
